@@ -24,20 +24,19 @@
         img {
             max-width: 80%;
             height: auto;
-            display: none;
+            display: none; /* Hide image initially */
         }
     </style>
 </head>
 <body>
     <div id="text">Click or tap anywhere.</div>
-<img id="img" src="Julianmahalko.jpg" alt="Happy Us">
+    <img id="img" src="Julianmahalko.jpg" alt="Happy Us">
     <script>
         const messages = [
-            
             "Thank you for visiting.",
             "This is a special message for you:",
             "Remember how it started?",
-            "It was all happines. 😊",
+            "It was all happiness. 😊",
             "Someone had his wheels 🚗",
             "You had your magic wand 🪄",
             "Roamed around the streets 🗺️",
@@ -47,7 +46,7 @@
             "Didn't even want to sleep 💤",
             "Just to make memories to keep 🥰",
             "Laughed at the stupid little things 😜",
-            "Started the sweetest so called fling 💘",
+            "Started the sweetest so-called fling 💘",
             "Now a heart is wistfully remembering 🥲",
             "The joy and laughter that two hearts used to bring ❤️❤️",
             "Someone is deeply sorry for any pain they've caused you.",
@@ -74,20 +73,21 @@
         let index = 0;
 
         function changeText() {
-            index = (index + 1) % messages.length;
             const textElement = document.getElementById('text');
             const imageElement = document.getElementById('img');
 
-            if (index < messages.length - 1) {
-                textElement.innerText = messages[index];
-                imageElement.style.display = 'none';
-            } else {
-                textElement.innerText = '';
-                imageElement.style.display = 'block';
+            if (index < messages.length) {
+                if (index < messages.length - 1) {
+                    textElement.innerText = messages[index];
+                    imageElement.style.display = 'none'; // Hide image
+                } else {
+                    textElement.innerText = ''; // Clear text
+                    imageElement.style.display = 'block'; // Show image
+                }
+                index++;
             }
         }
 
-       
         document.body.addEventListener('click', changeText);
     </script>
 </body>
