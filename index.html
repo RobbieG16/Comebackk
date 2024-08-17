@@ -7,6 +7,7 @@
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -17,14 +18,20 @@
         }
         #text {
             font-size: 24px;
+            max-width: 80%;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
         }
     </style>
 </head>
 <body>
     <div id="text">Click or tap anywhere.</div>
-
+<img id="lab" src="Julianmahalko.jpg" alt="Happy Us">
     <script>
-        const sentences = [
+        const messages = [
             
             "Thank you for visiting.",
             "This is a special message for you:",
@@ -66,8 +73,17 @@
         let index = 0;
 
         function changeText() {
-            index = (index + 1) % sentences.length;
-            document.getElementById('text').innerText = sentences[index];
+            index = (index + 1) % messages.length;
+            const textElement = document.getElementById('text');
+            const imageElement = document.getElementById('image');
+
+            if (index < messages.length - 1) {
+                textElement.innerText = messages[index];
+                imageElement.style.display = 'none';
+            } else {
+                textElement.innerText = '';
+                imageElement.style.display = 'block';
+            }
         }
 
        
