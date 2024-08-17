@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is not a scam website</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            cursor: pointer; 
+        }
+        #text {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="text">Click or tap anywhere.</div>
+
+    <script>
+        const sentences = [
+            
+            "Thank you for visiting.",
+            "This is a special message for you:",
+            "Remember how it started?",
+            "It was all happines. 😊",
+            "Someone had his wheels 🚗",
+            "You had your magic wand 🪄",
+            "Roamed around the streets 🗺️",
+            "Killed foes one by one ⚰️",
+            "Stayed up all night long 🌛",
+            "For you are too strong 💪",
+            "Didn't even want to sleep 💤",
+            "Just to make memories to keep 🥰",
+            "Laughed at the stupid little things 😜",
+            "Started the sweetest so called fling 💘",
+            "Now a heart is wistfully remembering 🥲",
+            "The joy and laughter that two hearts used to bring ❤️❤️",
+            "Someone is deeply sorry for any pain they've caused you.",
+            "Someone cares about you more than words can express.",
+            "Someone is afraid of losing you and wants to make things right.",
+            "Someone loves you so much and regrets any mistakes they've made.",
+            "Someone is here for you, wishing to heal the wounds of the past.",
+            "Someone's heart aches at the thought of being without you.",
+            "Someone wants you to know how precious you are to them.",
+            "Someone is holding onto hope that you can forgive and move forward.",
+            "Someone's love for you is unwavering, no matter the distance or time.",
+            "Someone wants you to be with them for the rest of their life.",
+            "Someone is sincerely apologizing and cherishing every moment with you.",
+            "That someone",
+            "is",
+            "me.",
+            "I love you.",
+            "Come back to me.",
+            "Remember how it started?",
+            "Love,",
+            "LeeSeenZone"
+        ];
+
+        let index = 0;
+
+        function changeText() {
+            index = (index + 1) % sentences.length;
+            document.getElementById('text').innerText = sentences[index];
+        }
+
+       
+        document.body.addEventListener('click', changeText);
+    </script>
+</body>
+</html>
